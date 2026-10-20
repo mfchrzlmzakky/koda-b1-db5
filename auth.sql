@@ -21,7 +21,6 @@
 --   expires_at TIMESTAMP NOT NULL
 -- );
 
-
 -- INSERT INTO roles (name) VALUES
 --   ('admin'),
 --   ('editor'),
