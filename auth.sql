@@ -1,0 +1,40 @@
+-- DROP TABLE IF EXISTS sessions;
+-- DROP TABLE IF EXISTS users;
+-- DROP TABLE IF EXISTS roles;
+
+-- CREATE TABLE roles (
+--   id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+--   name VARCHAR(50) NOT NULL UNIQUE
+-- );
+-- CREATE TABLE users (
+--   id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+--   email VARCHAR(255) NOT NULL UNIQUE,
+--   password_hash VARCHAR(255) NOT NULL,
+--   role_id INTEGER NOT NULL REFERENCES roles(id),
+--   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+-- );
+-- CREATE TABLE sessions (
+--   id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+--   user_id INTEGER NOT NULL REFERENCES users(id),
+--   token VARCHAR(255) NOT NULL UNIQUE,
+--   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+--   expires_at TIMESTAMP NOT NULL
+-- );
+
+
+-- INSERT INTO roles (name) VALUES
+--   ('admin'),
+--   ('editor'),
+--   ('user');
+-- INSERT INTO users (email, password_hash, role_id, created_at) VALUES
+--   ('admin@gmail.com', '$2b$10$ILSEGVpwRCwLjQJ6ErtstAAt9bEWGOo5wTKXU.KT6jmsvZKdfPZ.j', 1, '2026-01-10 08:00:00'),
+--   ('prabroro@gmail.com',  '$2b$10$aM8QHTfuJxaJcHLjUUuykTQm6XKGd1WbFSkh8TlPIjU.3o0skB6U.', 2, '2026-02-15 09:30:00'),
+--   ('fufufafa@gmail.com',  '$2b$10$PWNFobCsVyFe4GhxxA/0.1X3XIXtN.0KXYWBhs/y.Xe1RXpawKTFQ', 3, '2026-03-20 10:15:00'),
+--   ('bahlul@gmail.com',  '$2b$10$GlTX2KU6DCdrq..Tc59r1etmhE7qhBkgDQRKDdCTLfg5s5cfp4wKb', 3, '2026-04-05 14:45:00'),
+--   ('janggar@gmail.com',  '$2b$10$dT2wvCAxx.22sfqD8VS4Vb0tOcuaFECj2LvvjDAJdqGrbF1pZrBOk', 3, '2026-05-12 16:20:00');
+-- INSERT INTO sessions (user_id, token, created_at, expires_at) VALUES
+--   (1, '59adf3189d4d6dfb4ef27eddb2f2869c3bd7bd801409af5fe462b8aea49f0bf8', '2026-10-20 07:00:00', '2026-10-27 07:00:00'),
+--   (2, '3774ebaba4a3d36d4be4e775d68d8d2dd5d094c331551b3285b15ac39fadc5f3',  '2026-10-19 08:30:00', '2026-10-26 08:30:00'),
+--   (2, 'a63406b9b8588301252b0577f1fa46386dbc3da3a893c3bbf306f3d06240e543',  '2026-10-20 09:00:00', '2026-10-27 09:00:00'),
+--   (3, 'bcf2d5ba8b7f2730b8382f967b6a044d4d53aaf0adbed924fbe2c5c1c2baacac',  '2026-10-18 11:00:00', '2026-10-25 11:00:00'),
+--   (4, 'ee2e85d7d053de04422d9992182deab4f15d3a3a0db02e34554e7e58c5b66e14',  '2026-10-20 06:15:00', '2026-10-27 06:15:00');

@@ -7,12 +7,12 @@ erDiagram
 
     ROLES {
         int id PK
-        string name UK
+        string name
     }
 
     USERS {
         int id PK
-        string email UK
+        string email
         string password_hash
         int role_id FK
         timestamp created_at
@@ -21,7 +21,7 @@ erDiagram
     SESSIONS {
         int id PK
         int user_id FK
-        string token UK
+        string token
         timestamp created_at
         timestamp expires_at
     }
